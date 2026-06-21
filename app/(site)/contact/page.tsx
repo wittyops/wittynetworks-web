@@ -8,8 +8,7 @@ export default function ContactPage() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
-    const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const data = Object.fromEntries(new FormData(e.currentTarget));
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -23,61 +22,64 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen px-6 py-24">
+    <div className="px-6 py-24">
       <div className="max-w-xl mx-auto space-y-10">
-        <div>
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900">Get in Touch</h1>
-          <p className="mt-3 text-gray-600">
-            Consultations are by appointment. Tell us what you&apos;re working on and we&apos;ll
-            find a time that works.
+        <div className="space-y-3">
+          <p className="text-wn-teal text-sm font-display font-bold uppercase tracking-widest">
+            Get in Touch
+          </p>
+          <h1 className="font-display font-extrabold text-4xl text-wn-text">
+            Book a Consultation
+          </h1>
+          <p className="text-wn-muted leading-relaxed">
+            Appointments are 30 minutes, no obligation. Tell us what you&apos;re working on and
+            Witty will follow up to confirm a time.
           </p>
         </div>
 
         {status === "sent" ? (
-          <div className="p-6 bg-gray-50 rounded-xl text-gray-700">
-            Thanks — we&apos;ll be in touch shortly to confirm your appointment.
+          <div className="border border-wn-teal/30 bg-wn-teal/10 rounded-xl p-6 text-wn-teal">
+            Request received — Witty will be in touch shortly to confirm your appointment.
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-1">
-              <label className="text-sm font-medium text-gray-700">Name</label>
-              <input
-                name="name"
-                required
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
-              />
-            </div>
-            <div className="space-y-1">
-              <label className="text-sm font-medium text-gray-700">Email</label>
-              <input
-                name="email"
-                type="email"
-                required
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900"
-              />
-            </div>
-            <div className="space-y-1">
-              <label className="text-sm font-medium text-gray-700">What are you working on?</label>
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {[
+              { name: "name", label: "Name", type: "text" },
+              { name: "email", label: "Email", type: "email" },
+              { name: "company", label: "Company (optional)", type: "text", required: false },
+            ].map((f) => (
+              <div key={f.name} className="space-y-1.5">
+                <label className="text-sm text-wn-muted font-medium">{f.label}</label>
+                <input
+                  name={f.name}
+                  type={f.type}
+                  required={f.required !== false}
+                  className="w-full bg-wn-surface border border-wn-border rounded-lg px-4 py-2.5 text-wn-text placeholder:text-wn-slate focus:outline-none focus:border-wn-teal transition-colors"
+                />
+              </div>
+            ))}
+            <div className="space-y-1.5">
+              <label className="text-sm text-wn-muted font-medium">What are you working on?</label>
               <textarea
                 name="message"
                 rows={4}
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 resize-none"
+                className="w-full bg-wn-surface border border-wn-border rounded-lg px-4 py-2.5 text-wn-text placeholder:text-wn-slate focus:outline-none focus:border-wn-teal transition-colors resize-none"
               />
             </div>
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-700 transition-colors disabled:opacity-50"
+              className="w-full py-3.5 bg-wn-teal text-wn-midnight font-semibold rounded-lg hover:bg-wn-teal-muted transition-colors disabled:opacity-50"
             >
               {status === "sending" ? "Sending…" : "Request Appointment"}
             </button>
             {status === "error" && (
-              <p className="text-red-600 text-sm">Something went wrong — please try again.</p>
+              <p className="text-red-400 text-sm text-center">Something went wrong — please try again.</p>
             )}
           </form>
         )}
       </div>
-    </main>
+    </div>
   );
 }

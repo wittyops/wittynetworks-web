@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Witty Networks — Design Tokens
+ * Single Source of Truth: Penpot > Witty Identity System (shared library)
+ * File ID: 23ee53cd-9fc1-809d-8008-220c3b5a9b78
+ * design.wittycomp.com → The Witty Group → Witty Identity System
+ *
+ * DO NOT edit these values here without updating them in Penpot first.
+ * Penpot is the design authority. This file reflects it.
+ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Witty Networks Brand Colors ──────────────────────────────────────── */
+  --color-wn-midnight:     #0F172A;   /* WN / Background — Deep Midnight Blue  */
+  --color-wn-surface:      #1E293B;   /* WN / Surface                          */
+  --color-wn-border:       #334155;   /* WN / Border                           */
+  --color-wn-slate:        #475569;   /* WN / Vest Slate Gray (attire)         */
+  --color-wn-text:         #F1F5F9;   /* WN / Text Primary                     */
+  --color-wn-muted:        #94A3B8;   /* WN / Text Secondary                   */
+  --color-wn-teal:         #14B8A6;   /* WN / Accent — Cyber Teal              */
+  --color-wn-teal-muted:   #0D9488;   /* WN / Accent Muted                     */
+  --color-wn-teal-dim:     #134E4A;   /* WN / Teal dim (hover states)          */
+
+  /* ── The Witty Group Parent Colors ───────────────────────────────────── */
+  --color-wg-charcoal:     #1E1E24;   /* TWG / Charcoal Gray                   */
+  --color-wg-silver:       #E0E0E2;   /* TWG / Classic Silver                  */
+
+  /* ── Typography ──────────────────────────────────────────────────────── */
+  --font-display: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-sans:    var(--font-inter), "Inter", sans-serif;
+  --font-mono:    var(--font-jetbrains), "JetBrains Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: var(--color-wn-midnight);
+  --foreground: var(--color-wn-text);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
