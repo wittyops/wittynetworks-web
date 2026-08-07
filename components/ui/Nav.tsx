@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
@@ -10,7 +11,8 @@ export default function Nav() {
   return (
     <header className="border-b border-wn-border bg-wn-midnight/90 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-display font-bold text-lg text-wn-text tracking-tight">
+        <Link href="/" className="flex items-center gap-2 font-display font-bold text-lg text-wn-text tracking-tight">
+          <Image src="/wn-logomark.svg" alt="" width={28} height={30} className="w-7 h-auto" aria-hidden="true" />
           Witty<span className="text-wn-teal">Networks</span>
         </Link>
         <nav className="flex items-center gap-8">

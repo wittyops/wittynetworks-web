@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const services = [
@@ -54,10 +55,20 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-wn-teal/30 bg-wn-teal/10 text-wn-teal text-xs font-medium tracking-wide uppercase">
             Infrastructure · Intelligence · Field Support
           </div>
-          <h1 className="font-display font-extrabold text-5xl sm:text-7xl leading-[1.05] text-wn-text max-w-3xl">
-            Intelligent infrastructure.{" "}
-            <span className="text-wn-teal">Built for the field.</span>
-          </h1>
+          <div className="flex items-end justify-between gap-6">
+            <h1 className="font-display font-extrabold text-5xl sm:text-7xl leading-[1.05] text-wn-text max-w-3xl">
+              Intelligent infrastructure.{" "}
+              <span className="text-wn-teal">Built for the field.</span>
+            </h1>
+            <Image
+              src="/wn-logomark.svg"
+              alt="Witty Networks"
+              width={120}
+              height={130}
+              className="shrink-0 w-20 h-auto sm:w-28 lg:w-32"
+              priority
+            />
+          </div>
           <p className="text-lg text-wn-muted leading-relaxed max-w-2xl">
             Witty Networks delivers managed systems, smart operations, and on-site field
             engineering — all backed by Witty, your always-available operations intelligence.

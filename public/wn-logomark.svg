@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130" width="120" height="130" role="img" aria-label="Witty Networks">
+  <!-- Outer ears -->
+  <circle cx="28" cy="32" r="20" fill="#14B8A6"/>
+  <circle cx="92" cy="32" r="20" fill="#14B8A6"/>
+  <!-- Inner ear tone -->
+  <circle cx="28" cy="32" r="11" fill="#0D9488"/>
+  <circle cx="92" cy="32" r="11" fill="#0D9488"/>
+
+  <!-- Head -->
+  <circle cx="60" cy="72" r="50" fill="#14B8A6"/>
+
+  <!-- Headset band across top of head -->
+  <path d="M18 59 Q60 22 102 59" stroke="#0F172A" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <!-- Headset ear cups -->
+  <rect x="7" y="54" width="17" height="22" rx="5" fill="#1E293B"/>
+  <rect x="96" y="54" width="17" height="22" rx="5" fill="#1E293B"/>
+
+  <!-- Microphone boom arm (from left cup) -->
+  <path d="M15 74 Q6 88 10 98" stroke="#1E293B" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Mic capsule -->
+  <circle cx="10" cy="100" r="5" fill="#14B8A6"/>
+  <circle cx="10" cy="100" r="2.5" fill="#0F172A"/>
+
+  <!-- Eyes -->
+  <circle cx="42" cy="70" r="8" fill="#0F172A"/>
+  <circle cx="78" cy="70" r="8" fill="#0F172A"/>
+  <!-- Eye shine -->
+  <circle cx="44.5" cy="67.5" r="2.5" fill="#F1F5F9" opacity="0.9"/>
+  <circle cx="80.5" cy="67.5" r="2.5" fill="#F1F5F9" opacity="0.9"/>
+
+  <!-- Muzzle -->
+  <ellipse cx="60" cy="88" rx="20" ry="14" fill="#0D9488"/>
+
+  <!-- Nose -->
+  <ellipse cx="60" cy="81" rx="7" ry="4.5" fill="#0F172A"/>
+
+  <!-- Smile -->
+  <path d="M50 91 Q60 99 70 91" stroke="#0F172A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Subtle circuit nodes at bottom corners — nod to the "nervous system" brand concept -->
+  <circle cx="24" cy="118" r="2.5" fill="#14B8A6" opacity="0.5"/>
+  <circle cx="96" cy="118" r="2.5" fill="#14B8A6" opacity="0.5"/>
+  <line x1="24" y1="118" x2="60" y2="122" stroke="#14B8A6" stroke-width="1" opacity="0.3"/>
+  <line x1="96" y1="118" x2="60" y2="122" stroke="#14B8A6" stroke-width="1" opacity="0.3"/>
+  <circle cx="60" cy="123" r="2" fill="#14B8A6" opacity="0.4"/>
+</svg>
